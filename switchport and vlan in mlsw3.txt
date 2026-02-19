@@ -1,0 +1,26 @@
+vlan 10
+name HR
+vlan 20
+name CS
+vlan 30
+name MK
+vlan 40
+name LM
+vlan 50
+name IT
+vlan 120
+name VOICE
+exit
+
+int range fa0/1-2
+switchport mode trunk
+exit
+
+
+int range fa0/3-24
+switchport mode access
+switchport access vlan 50
+switchport voice vlan 120
+exit
+
+do wr

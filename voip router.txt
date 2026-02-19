@@ -1,0 +1,111 @@
+Router#
+Router#en
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#service dhcp
+Router(config)#
+Router(config)#ip dhcp pool VOICE
+Router(dhcp-config)#
+Router(dhcp-config)#network 10.10.10.0 255.255.255.0
+Router(dhcp-config)#
+Router(dhcp-config)#default-router 10.10.10.1
+Router(dhcp-config)#
+Router(dhcp-config)#option 150 ip 10.10.10.1
+Router(dhcp-config)#
+Router(dhcp-config)#dns-server 10.10.10.1
+Router(dhcp-config)#
+Router(dhcp-config)#
+Router(dhcp-config)#exit
+Router(config)#
+Router(config)#
+Router(config)#ip dhcp excluded-address 10.10.10.1
+Router(config)#
+Router(config)#
+Router(config)#telephony-service
+Router(config-telephony)#
+Router(config-telephony)#
+Router(config-telephony)#max-ephone 20
+Please remove ephone 21 to 24 by re-configuring or reloading the system!!
+Router(config-telephony)#
+Router(config-telephony)#max-dn 20
+Router(config-telephony)#
+Router(config-telephony)#
+Router(config-telephony)#ip source-address 10.10.10.1 port 2000
+Router(config-telephony)#
+Router(config-telephony)#auto assign 1 to 20
+Router(config-telephony)#
+Router(config-telephony)#exit
+Router(config)#
+Router(config)#
+Router(config)#ephone-dn 1
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 401
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#exit
+Router(config)#
+Router(config)#ephone-dn 2
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 402
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#ephone-dn 3
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 403
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#
+Router(config)#ephone-dn 4
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 404
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#ephone-dn 5
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 405
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#ephone-dn 6
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 406
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#
+Router(config)#ephone-dn 7
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 407
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#ephone-dn 8
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 408
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#ephone-dn 9
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 409
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#ephone-dn 10
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#number 410
+Router(config-ephone-dn)#
+Router(config-ephone-dn)#ex
+Router(config)#
+Router(config)#
+Router(config)#do wr
+Building configuration...
+[OK]
+Router(config)#
+Router(config)#
+Router(config)#

@@ -1,0 +1,38 @@
+HQ
+
+conf t
+router ospf 10
+router-id 4.4.4.4
+network 190.200.100.0 0.0.0.3 area 0
+network 190.200.100.12 0.0.0.3 area 0
+network 192.168.21.16 0.0.0.15 area 0
+end
+clear ip ospf process
+
+
+Safaricom
+
+conf t
+int Serial0/2/0
+ip ospf network point-to-point
+ip ospf 10 area 0
+exit
+router ospf 10
+router-id 5.5.5.5
+network 190.200.100.0 0.0.0.3 area 0
+end
+clear ip ospf process
+
+
+JTL
+
+conf t
+int Serial0/2/1
+ip ospf network point-to-point
+ip ospf 10 area 0
+exit
+router ospf 10
+router-id 6.6.6.6
+network 190.200.100.12 0.0.0.3 area 0
+end
+clear ip ospf process
